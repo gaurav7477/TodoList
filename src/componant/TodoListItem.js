@@ -10,11 +10,12 @@ const TodoListItem = ({ todos, setTodos,setEditTodo }) => {
         setTodos(
             todo.map((item) =>{
                 if(item.id === todo.id){
-                    return {...item,completed: !item.completed}
+                    return {...item,completed: !item.completed};
                 }
+                return item;
             })
-        )
-    }
+        );
+    };
 
     const handleDelete = ({id})=>{
         setTodos(todos.filter((todo) => todo.id !== id));
